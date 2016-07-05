@@ -7,13 +7,36 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
+    double principal;      //Amount of Money Borrowed
+    double num_of_months;   //total number of payments in months
+    double interest_rate;  // Interest Rate
+    double monthly_interestRate;
+    double monthly_repayments;
+    double total_amount_repayments;
+    double total_costOfCredit;
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
 
-    protected void TextBox2_TextChanged(object sender, EventArgs e)
-    {
 
+
+    protected void calculate_Click(object sender, EventArgs e)
+    {
+        calculate_payment();
+    }
+
+    private void calculate_payment()
+    {
+        principal = double.Parse(tbAmount.Text);
+        num_of_months = double.Parse(tbMonths.Text);
+        interest_rate = double.Parse(tbAPR.Text);
+        monthly_interestRate = interest_rate / (12 * 100);
+
+        monthly_repayments = principal * (monthly_interestRate / (1- Math.Pow((1+ monthly_interestRate),-num_of_months)));
+
+        double a = Math.Round(monthly_repayments, 2,MidpointRounding.ToEven);
+        OPMPayments.Text = Convert.ToString(a);
     }
 }

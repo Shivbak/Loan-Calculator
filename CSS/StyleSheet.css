@@ -1,0 +1,11 @@
+﻿ .container.myself
+       {
+           background-color : #4ea4b4;
+           color : white;
+       }
+       #logo{
+           margin-left : 200px;
+       }
+       img{
+           margin-left : 10px;
+       }
