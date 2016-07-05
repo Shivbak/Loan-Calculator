@@ -12,7 +12,7 @@ public partial class _Default : System.Web.UI.Page
     double interest_rate;  // Interest Rate
     double monthly_interestRate;
     double monthly_repayments;
-    double total_amount_repayments;
+    double total_amount_repayable;
     double total_costOfCredit;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -36,7 +36,21 @@ public partial class _Default : System.Web.UI.Page
 
         monthly_repayments = principal * (monthly_interestRate / (1- Math.Pow((1+ monthly_interestRate),-num_of_months)));
 
-        double a = Math.Round(monthly_repayments, 2,MidpointRounding.ToEven);
-        OPMPayments.Text = Convert.ToString(a);
+        double rf_monthly_repayments = Math.Round(monthly_repayments, 2,MidpointRounding.ToEven);
+
+        OPMPayments.Text = "£" + rf_monthly_repayments.ToString("N");
+
+        total_amount_repayable = monthly_repayments * num_of_months;
+
+        double rf_total_amount_repayable = Math.Round(total_amount_repayable, 2, MidpointRounding.ToEven);
+
+        OPTotalRepayments.Text = "£" + rf_total_amount_repayable.ToString("N");
+
+        total_costOfCredit = total_amount_repayable - principal;
+
+        double rf_total_costOfCredit = Math.Round(total_costOfCredit, 2, MidpointRounding.ToEven);
+
+        OPTotalCostOfCredit.Text = "£" + rf_total_costOfCredit.ToString("N");
+        
     }
 }

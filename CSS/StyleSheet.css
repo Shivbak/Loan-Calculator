@@ -1,11 +1,26 @@
-﻿ .container.myself
+﻿ .myself
        {
            background-color : #4ea4b4;
            color : white;
+           margin-left : 25px;
+           padding-left : 20px;
        }
-       #logo{
-           margin-left : 200px;
-       }
+      
        img{
-           margin-left : 10px;
+           margin-left : 20px;
        }
+
+       #Calc{height: 50px;
+             width:35px;
+       }
+
+       nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:200px;
+    float:left;
+    padding:5px;
+    padding-top : 20px;
+    
+}
