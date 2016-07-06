@@ -19,14 +19,15 @@
          
         <div class="container">
              <img src="../SBBC.png" id="logo"/>
-           <div class ="col-lg-12">
-                <div class="col-lg-2">
+           
+                <div class="row">
                 <nav>
                     <p>My loan calculator is designed to show you how much your personal loan is going to cost. 
                         It shows the monthly payments based on the loan term and the annual percentage rate (APR) you choose. As well as monthly payments,
                          the calculator comes up with the total amount repayable and the actual cost of the loan.</p>
                </nav>
            </div>
+            <div class="row">
             <div class="col-lg-8">
             <div class="myself">
 
@@ -86,8 +87,11 @@
         </div>
                  
         </div>
-                <div id="chartContainer" style="height: 300px; width: 100%;"></div>    
-              </div>  
+                  </div> 
+                <div class ="col-md-2" id="chartContainer" style="height: 300px; width:350px;">
+                   
+                </div>    
+             
                
                 </div>
             

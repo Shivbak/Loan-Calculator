@@ -1,21 +1,25 @@
-﻿window.onload = function () {
+﻿draw = function (total_amount_repayable, num_of_months) {
+
     var chart = new CanvasJS.Chart("chartContainer", {
+       
         title: {
-            text: "My First Chart in CanvasJS"
+            fontColor: "#fff",
+            text: "Total Budget: £" ,
         },
+        animationEnabled: true, //disable here
+
         data: [
-		{
-		    // Change type to "doughnut", "line", "splineArea", etc.
-		    type: "column",
-		    dataPoints: [
-				{ label: "apple", y: 10 },
-				{ label: "orange", y: 15 },
-				{ label: "banana", y: 25 },
-				{ label: "mango", y: 30 },
-				{ label: "grape", y: 28 }
-		    ]
-		}
+    {
+       
+        type: "line",
+        dataPoints: [
+                { label: "Total Amount Repayable", y: parseFloat(total_amount_repayable), indexLabelFontColor: "#fff" },
+                { label: "Months", y: parseFloat(num_of_months), indexLabelFontColor: "#fff" }
+               
+        ]
+    }
         ]
     });
+
     chart.render();
 }

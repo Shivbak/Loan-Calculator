@@ -2,8 +2,10 @@
        {
            background-color : #4ea4b4;
            color : white;
-           margin-left : 25px;
-           padding-left : 20px;
+           margin-top : 15px;
+           padding-left:30px;
+           height : 380px;
+           
        }
       
        img{
@@ -17,9 +19,9 @@
        nav {
     line-height:30px;
     background-color:#eeeeee;
-    height:300px;
-    width:200px;
-    float:left;
+    height:100px;
+    
+    
     padding:5px;
     padding-top : 20px;
     

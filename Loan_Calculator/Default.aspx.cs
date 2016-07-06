@@ -52,6 +52,8 @@ public partial class _Default : System.Web.UI.Page
         double rf_total_costOfCredit = Math.Round(total_costOfCredit, 2, MidpointRounding.ToEven);
 
         OPTotalCostOfCredit.Text = "£" + rf_total_costOfCredit.ToString("N");
+
+        ClientScript.RegisterStartupScript(GetType(), "draw", "draw('" + total_amount_repayable + "','" + num_of_months + "');", true);
         
     }
 }
