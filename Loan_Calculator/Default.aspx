@@ -8,7 +8,8 @@
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../CSS/StyleSheet.css" rel="stylesheet" />
 
-    <script src="../Scripts/chart.js"></script>
+    <script src="../Scripts/canvasjs.min.js"></script>
+    
     <script src="../Scripts/chartScript.js"></script>
 </head>
 <body>
@@ -50,17 +51,17 @@
              <div class="col-sm-3">
         <div class="input-group">
                      <div class="input-group-addon">£</div>
-             <asp:TextBox ID="tbAmount" runat="server" class="form-control">
+             <asp:TextBox ID="tbAmount" runat="server" class="form-control" type ="number">
              </asp:TextBox>
             
             </div>
              </div>
              <div class="col-sm-3">
-             <asp:TextBox ID="tbMonths" runat="server" class="form-control"></asp:TextBox>
+             <asp:TextBox ID="tbMonths" runat="server" class="form-control" type ="number"></asp:TextBox>
              </div>
              <div class="col-sm-3">
                  <div class="input-group">
-             <asp:TextBox ID="tbAPR" runat="server" class="form-control"></asp:TextBox>
+             <asp:TextBox ID="tbAPR" runat="server" class="form-control" ></asp:TextBox>
                  <div class="input-group-addon">%</div></div>
              </div>
         </div>
@@ -83,9 +84,13 @@
         <asp:Label ID="OPTotalCostOfCredit" runat="server"></asp:Label>
                 </div>
         </div>
+                 
         </div>
-              </div>      
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>    
+              </div>  
+               
                 </div>
+            
     </div>
     </form>
 </body>

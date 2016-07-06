@@ -25,6 +25,7 @@ public partial class _Default : System.Web.UI.Page
     protected void calculate_Click(object sender, EventArgs e)
     {
         calculate_payment();
+        
     }
 
     private void calculate_payment()
