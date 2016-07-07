@@ -17,22 +17,27 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+       
     }
 
+   
 
 
     protected void calculate_Click(object sender, EventArgs e)
     {
-        calculate_payment();
         
-    }
+            calculate_payment();
+      
+}
 
     private void calculate_payment()
     {
-        principal = double.Parse(tbAmount.Text);
-        num_of_months = double.Parse(tbMonths.Text);
-        interest_rate = double.Parse(tbAPR.Text);
+        
+        principal = getData(tbAmount);
+        num_of_months = getData(tbMonths);
+        interest_rate = getData(tbAPR);
+
+
         monthly_interestRate = interest_rate / (12 * 100);
 
         monthly_repayments = principal * (monthly_interestRate / (1- Math.Pow((1+ monthly_interestRate),-num_of_months)));
@@ -56,4 +61,18 @@ public partial class _Default : System.Web.UI.Page
         ClientScript.RegisterStartupScript(GetType(), "draw", "draw('" + total_amount_repayable + "','" + num_of_months + "');", true);
         
     }
+
+    private double getData(TextBox txtBoxValue)
+    {
+        if (!string.IsNullOrWhiteSpace(txtBoxValue.Text))
+        {
+            return double.Parse(txtBoxValue.Text);
+        }
+        else
+        {
+            txtBoxValue.Text = "0";
+            return 0;
+        }
+    }
+
 }
