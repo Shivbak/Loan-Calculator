@@ -52,17 +52,17 @@
              <div class="col-sm-3">
         <div class="input-group">
                      <div class="input-group-addon">£</div>
-             <asp:TextBox ID="tbAmount" runat="server" class="form-control" type ="number">
+             <asp:TextBox ID="tbAmount" runat="server" class="form-control"  onblur="CheckAmount(this)">
              </asp:TextBox>
             
             </div>
              </div>
              <div class="col-sm-3">
-             <asp:TextBox ID="tbMonths" runat="server" class="form-control" type ="number"></asp:TextBox>
+             <asp:TextBox ID="tbMonths" runat="server" class="form-control"  onblur="CheckMonths(this)"></asp:TextBox>
              </div>
              <div class="col-sm-3">
                  <div class="input-group">
-             <asp:TextBox ID="tbAPR" runat="server" class="form-control" ></asp:TextBox>
+             <asp:TextBox ID="tbAPR" runat="server" class="form-control" onblur ="CheckAPR(this)" ></asp:TextBox>
                  <div class="input-group-addon">%</div></div>
              </div>
         </div>
@@ -88,8 +88,14 @@
                  
         </div>
                   </div> 
+<<<<<<< HEAD
                 <div class ="col-md-2" id="chartContainer" style="height: 380px; width:350px;">
                    
+=======
+                <div class ="col-md-2" id="chartContainer" style="height: 400px; width:350px;">
+                    <div id="chartPlaceholder"></div>
+                    <div id="noDataPlaceholder" class="h1"></div>
+>>>>>>> origin/master
                 </div>    
              
                
