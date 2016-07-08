@@ -88,20 +88,17 @@
                  
         </div>
                   </div> 
-<<<<<<< HEAD
-                <div class ="col-md-2" id="chartContainer" style="height: 380px; width:350px;">
-                   
-=======
                 <div class ="col-md-2" id="chartContainer" style="height: 400px; width:350px;">
                     <div id="chartPlaceholder"></div>
                     <div id="noDataPlaceholder" class="h1"></div>
->>>>>>> origin/master
+
                 </div>    
              
                
                 </div>
             
     </div>
+        <div id="A"></div>
     </form>
 </body>
 </html>

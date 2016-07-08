@@ -20,39 +20,11 @@ public partial class _Default : System.Web.UI.Page
        
     }
 
-<<<<<<< HEAD
-    private void textchange()
-    {
-        
-    }
 
-    protected void calculate_Click(object sender, EventArgs e)
-    {
-        textchange();
-        calculate_payment();
-        
-    }
-   
-    private void calculate_payment()
-    {
-        tbAmount.TextChanged += (s, e) =>
-        {
-            var textbox = s as TextBox;
-            int value;
-            if (int.TryParse(textbox.Text, out value))
-            {
-                if (value > 30000)
-                    textbox.Text = "30000";
-                else if (value < 0)
-                    textbox.Text = "0";
-            }
-        };
-        principal = double.Parse(tbAmount.Text);
-        num_of_months = double.Parse(tbMonths.Text);
-        interest_rate = double.Parse(tbAPR.Text);
-=======
-   
 
+   
+   
+    
 
     protected void calculate_Click(object sender, EventArgs e)
     {
@@ -69,7 +41,6 @@ public partial class _Default : System.Web.UI.Page
         interest_rate = getData(tbAPR);
 
 
->>>>>>> origin/master
         monthly_interestRate = interest_rate / (12 * 100);
 
         monthly_repayments = principal * (monthly_interestRate / (1- Math.Pow((1+ monthly_interestRate),-num_of_months)));

@@ -1,6 +1,6 @@
 ﻿ draw = function (total_amount_repayable, num_of_months) {
 
-    if (total_amount_repayable === "0" && num_of_months === "0")
+    if (total_amount_repayable == "NaN" && num_of_months == "NaN")
     {
        
     
@@ -8,11 +8,12 @@
     }
     else
     {
+        document.getElementById("A").textContent = "Total amount :" + total_amount_repayable;
         var chart = new CanvasJS.Chart("chartContainer", {
 
             title: {
-                fontColor: "#fff",
-                text: "Total Budget: £",
+                fontColor: "#4ea4b4",
+                text: "Your Loan :",
             },
             animationEnabled: true, //disable here
 
@@ -21,8 +22,8 @@
 
             type: "spline",
             dataPoints: [
-                    { label: "Total Amount Repayable", y: parseFloat(total_amount_repayable), indexLabelFontColor: "#fff" },
-                    { label: "Months", y: parseFloat(num_of_months), indexLabelFontColor: "#fff" }
+                    { label: "Total Amount Repayable", y: parseFloat(total_amount_repayable), indexLabelFontColor: "#F1F1F1" },
+                    { label: "Months", y: parseFloat(num_of_months), indexLabelFontColor: "#F1F1F1" }
 
             ]
         }
@@ -33,35 +34,3 @@
     }
 }
 
-function CheckAmount(sender) {
-    if (!isNaN(sender.value)) {
-        if (sender.value > 25000)
-            sender.value = 25000;
-        if (sender.value < 0)
-            sender.value = 0;
-    } else {
-        sender.value = 0;
-    }
-}
-
-function CheckMonths(sender) {
-    if (!isNaN(sender.value)) {
-        if (sender.value > 120)
-            sender.value = 120;
-        if (sender.value < 0)
-            sender.value = 0;
-    } else {
-        sender.value = 0;
-    }
-}
-
-function CheckAPR(sender) {
-    if (!isNaN(sender.value)) {
-        if (sender.value > 100)
-            sender.value = 100;
-        if (sender.value < 0)
-            sender.value = 0;
-    } else {
-        sender.value = 0;
-    }
-}
