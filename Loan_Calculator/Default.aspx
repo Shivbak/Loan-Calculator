@@ -88,7 +88,7 @@
                  
         </div>
                   </div> 
-                <div class ="col-md-2" id="chartContainer" style="height: 300px; width:350px;">
+                <div class ="col-md-2" id="chartContainer" style="height: 380px; width:350px;">
                    
                 </div>    
              
