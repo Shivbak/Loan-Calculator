@@ -7,7 +7,8 @@
     } else {
         sender.value = 0;
     }
-}
+
+   
 
 function CheckMonths(sender) {
     if (!isNaN(sender.value)) {

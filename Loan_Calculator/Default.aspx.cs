@@ -40,28 +40,38 @@ public partial class _Default : System.Web.UI.Page
         num_of_months = getData(tbMonths);
         interest_rate = getData(tbAPR);
 
+        if (principal != 0 && num_of_months != 0 && interest_rate != 0)
+        {
+            monthly_interestRate = interest_rate / (12 * 100);
 
-        monthly_interestRate = interest_rate / (12 * 100);
+            monthly_repayments = principal * (monthly_interestRate / (1 - Math.Pow((1 + monthly_interestRate), -num_of_months)));
 
-        monthly_repayments = principal * (monthly_interestRate / (1- Math.Pow((1+ monthly_interestRate),-num_of_months)));
+            double rf_monthly_repayments = Math.Round(monthly_repayments, 2, MidpointRounding.ToEven);
 
-        double rf_monthly_repayments = Math.Round(monthly_repayments, 2,MidpointRounding.ToEven);
+            OPMPayments.Text = "£" + rf_monthly_repayments.ToString("N");
 
-        OPMPayments.Text = "£" + rf_monthly_repayments.ToString("N");
+            total_amount_repayable = monthly_repayments * num_of_months;
 
-        total_amount_repayable = monthly_repayments * num_of_months;
+            double rf_total_amount_repayable = Math.Round(total_amount_repayable, 2, MidpointRounding.ToEven);
 
-        double rf_total_amount_repayable = Math.Round(total_amount_repayable, 2, MidpointRounding.ToEven);
+            OPTotalRepayments.Text = "£" + rf_total_amount_repayable.ToString("N");
 
-        OPTotalRepayments.Text = "£" + rf_total_amount_repayable.ToString("N");
+            total_costOfCredit = total_amount_repayable - principal;
 
-        total_costOfCredit = total_amount_repayable - principal;
+            double rf_total_costOfCredit = Math.Round(total_costOfCredit, 2, MidpointRounding.ToEven);
 
-        double rf_total_costOfCredit = Math.Round(total_costOfCredit, 2, MidpointRounding.ToEven);
+            OPTotalCostOfCredit.Text = "£" + rf_total_costOfCredit.ToString("N");
 
-        OPTotalCostOfCredit.Text = "£" + rf_total_costOfCredit.ToString("N");
+            ClientScript.RegisterStartupScript(GetType(), "draw", "draw('" + rf_total_amount_repayable + "','" + num_of_months + "','"+ rf_monthly_repayments + "');", true);
+        }
 
-        ClientScript.RegisterStartupScript(GetType(), "draw", "draw('" + total_amount_repayable + "','" + num_of_months + "');", true);
+        else
+        {
+            OPMPayments.Text = "-";
+            OPTotalRepayments.Text = "-";
+            OPTotalCostOfCredit.Text = "-";
+
+        }
         
     }
 
