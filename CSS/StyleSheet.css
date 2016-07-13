@@ -1,78 +1,57 @@
-﻿ .myself
-       {font-family: 'Nunito', sans-serif;
-           background-color : #4ea4b4;
-           color : white;
-           margin-top : 15px;
-           padding-left:30px;
-           padding-right: 30px;
-           height : 400px;
-           
-           
+﻿ 
+.myself
+       {
+       font-family: 'Nunito', sans-serif;
+       background-color : #4ea4b4;
+       color : white;
+       margin-top : 15px;
+       padding-left:30px;
+       padding-right: 30px;
+                 
        }
-      
-       #logo{
-           margin-left : 480px;
-       }
-
-       #Calc{height: 40px;
-             width:25px;
-             padding-bottom : 5px;
+  
+#Calc 
+    {
+       height: 40px;
+       width:25px;
+       padding-bottom : 5px;
              
-       }
+    }
 
-       nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:120px;
-    width: 1170px;
-    text-align:center;
-    
-    
-    padding:5px;
-    padding-top : 10px;
-    margin-left: 15px;
-}
-       #A{
-          
-        
-         
+      
+ .result{
          padding-left : 30px;
          margin-left : -30px;
          padding-right : 30px;
          margin-right : -30px;
-       
          
-            background-color: #87BFC9;
-            
-           font-size:medium;
-           font-weight: bold;
-           height : 50px;
-       }
-       #calculate {
-           background-color:#007382;
-           
-       }
-       #B{
-           font-size:medium;
-           font-weight: bold;
+        
+         font-size:large;
+         font-weight: bold;
+         height : 50px;
        }
 
-       #C{
+#calculate {
+         background-color:#007382;
+           }
+#tag{
+         font-size:medium;
+         font-weight: bold;
+    }
+
+.txting{
            text-align: center;
 
        }
-       #D
-       {
-           padding-left:300px;
-       }
 
-       #chartContainer{
+
+#chartContainer{
             padding-top:15px;
-            height: 500px; 
+            height: 400px; 
             width:390px;
        }
 
-       .E{
+.heading{
             padding-left : 30px;
          margin-left : -30px;
          padding-right : 30px;
@@ -81,6 +60,7 @@
        
             background-color: #87BFC9;
        }
-       #NOTE{
+ #NOTE{
+     text-align:center;
            font-size:smaller;
-       }
+      }

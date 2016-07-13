@@ -1,4 +1,6 @@
-﻿function CheckAmount(sender) {
+﻿
+//checking user input of amount 
+function CheckAmount(sender) {
     if (!isNaN(sender.value)) {
         if (sender.value > 25000)
             sender.value = 25000;
@@ -10,6 +12,7 @@
 
 }
 
+// checking user input of months
 function CheckMonths(sender) {
     if (!isNaN(sender.value)) {
         if (sender.value > 120)
@@ -21,6 +24,7 @@ function CheckMonths(sender) {
     }
 }
 
+// checking user input of APR 
 function CheckAPR(sender) {
     if (!isNaN(sender.value)) {
         if (sender.value > 100)
