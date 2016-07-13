@@ -45,7 +45,7 @@ draw = function (rf_total_amount_repayable, num_of_months, rf_monthly_repayments
        data: [
               {
                   type: "spline",
-                  toolTipContent: "In Month {x} Total Amount Repayable is {y}",
+                  toolTipContent: "In Month {x} Total Amount Repayable left is £{y}",
            
                   dataPoints: dataPoints 
               }
