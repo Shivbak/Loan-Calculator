@@ -7,20 +7,22 @@
 
     <title>SSBC Loan Calculator</title>
 
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../CSS/StyleSheet.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/StyleSheet.css" rel="stylesheet" />
 
-    <script src="../Scripts/canvasjs.min.js"></script>
+    <script src="Scripts/canvasjs.min.js"></script>
     
-    <script src="../Scripts/chartScript.js"></script>
-    <script src="../Scripts/checkValue.js"></script>
+    <script src="Scripts/chartScript.js"></script>
+    <script src="Scripts/checkValue.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+
 </head>
 <body>
     <form id="form1" runat="server">
     
         <div class="container">
 
-             <img src="../SBBC.png" />
+             <img src="SBBC.png" />
            
                 <div class="row jumbotron" style ="padding : 20px;">
                   
@@ -32,11 +34,13 @@
                 </div>
 
         <div class="row">
+            <asp:ValidationSummary ID="vs" runat="server" CssClass="alert-danger" HeaderText="Enter only digits in the following fields:" 
+                    BorderStyle="Solid" BorderWidth="2px" BorderColor="Red" />
             <div class="col-lg-8">
                 <div class="myself">
 
                      <div class="row heading txting">
-                         <h1> <img src="../CalcIcon.png" id="Calc"/> Loan Calculator</h1>
+                         <h1> <img src="CalcIcon.png" id="Calc"/> Loan Calculator</h1>
                      </div> <br />
 
              <div class="row" id="tag"> 
@@ -45,24 +49,30 @@
                     <asp:Label ID="LabelAmount" runat="server" >Amount</asp:Label><br /><br />
                         <div class="input-group">
                             <div class="input-group-addon">£</div>
-                                <asp:TextBox ID="tbAmount" runat="server" class="form-control"  onkeydown="CheckAmount(this)">
+                                <asp:TextBox ID="tbAmount" runat="server" Cssclass="form-control"  onkeydown="CheckAmount(this)">
                                 </asp:TextBox>
                         </div>
+                    <asp:CompareValidator ID="cvAmount" runat="server" ControlToValidate="tbAmount" Type="Double"
+                                Operator="DataTypeCheck" Text="*" ErrorMessage="Amount" Display="Static" CssClass="text-danger"></asp:CompareValidator>
                     <br />
                 </div>
 
                 <div class="col-sm-4 txting">
                     <asp:Label ID="LabelMonths" runat="server" >For How Many Months?</asp:Label><br /><br />
-                        <asp:TextBox ID="tbMonths" runat="server" class="form-control"  onkeydown="CheckMonths(this)"></asp:TextBox>
+                        <asp:TextBox ID="tbMonths" runat="server" Cssclass="form-control"  onkeydown="CheckMonths(this)"></asp:TextBox>
+                    <asp:CompareValidator ID="cvMonths" runat="server" ControlToValidate="tbMonths" Type="Integer"
+                                Operator="DataTypeCheck" Text="*" ErrorMessage="Months" Display="Static" CssClass="text-danger"></asp:CompareValidator>
                     <br />
                 </div>
 
                 <div class="col-sm-4 txting">
                     <asp:Label ID="LabelAPR" runat="server" >APR Interest Rate</asp:Label><br /><br />
                         <div class="input-group">
-                            <asp:TextBox ID="tbAPR" runat="server" class="form-control" onkeydown ="CheckAPR(this)" ></asp:TextBox>
+                            <asp:TextBox ID="tbAPR" runat="server" Cssclass="form-control" onkeydown ="CheckAPR(this)" ></asp:TextBox>
                             <div class="input-group-addon">%</div>
                         </div>
+                    <asp:CompareValidator ID="cvAPR" runat="server" ControlToValidate="tbAPR" Type="Double"
+                                Operator="DataTypeCheck" Text="*" ErrorMessage="APR" Display="Static" CssClass="text-danger"></asp:CompareValidator>
                     <br />
                 </div>
 
@@ -71,7 +81,7 @@
              <br />
 
              <div>
-                   <asp:Button ID="calculate" runat="server" Text="Calculate" OnClick="calculate_Click"  class="btn btn-lg active" />
+                   <asp:Button ID="calculate" runat="server" Text="Calculate" OnClick="calculate_Click"  Cssclass="btn btn-lg active" />
              </div>
 
              <br /><br />
