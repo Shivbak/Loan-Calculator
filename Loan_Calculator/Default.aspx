@@ -126,7 +126,11 @@
 
             </div>
          <! -- *** row ends here *** -- >
-
+    <div>
+        <p id ="disclaimer"> Disclaimer: this site is a non-commercial, demonstration programme. It is not in any way a real banking site and there is no facility to pay or receive money. This
+            site is not connected in any way to any existing banking sites. 
+        </p>
+    </div>
        </div>
      <! -- *** container ends here *** -- >
         
